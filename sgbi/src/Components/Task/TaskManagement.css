@@ -28,3 +28,18 @@
     background-color: transparent; 
   
   }
+
+  .p_cardbody{
+    font-size: 13px;
+    
+
+  }
+  .card-head{
+    font-weight:bold
+  }
+
+  .btn_color_card{
+    background-color: #0013FE;
+    height: 25px;
+  padding: 1px 10px;
+  }
