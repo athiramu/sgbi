@@ -1,38 +1,36 @@
-.header{
+.header {
     grid-area: header;
-    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px 0 30px;
-    box-shadow: 0 6px 7px -3px rgba(0,0,0,0.35);
+    padding: 0 30px;
+    box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
+    background-color: #fff;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 260px; /* Width of the sidebar */
+    width: calc(100% - 260px);
+    z-index: 1000;
 }
 
-.menu-icon{
-    display: none;
-
+.menu-icon, .header-left, .header-right {
+    display: flex;
+    align-items: center;
 }
-.icon{
+
+.icon {
     vertical-align: middle;
     line-height: 1px;
     font-size: 20px;
 }
 
-.icon_header{
+.icon_header {
     vertical-align: middle;
     line-height: 1px;
     font-size: 26px;
-
 }
-.icon,.icon_header{
+
+.icon, .icon_header {
     margin-right: 5px;
-}
-
-.grid-container{
-    display: grid;
-    grid-template-columns: 260px 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 3fr;
-    grid-template-areas: 'sidebar header header header'
-    'sidebar main main main';
-    height: 100vh;
 }

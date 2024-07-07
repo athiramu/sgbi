@@ -7,6 +7,7 @@ import { GrSettingsOption } from "react-icons/gr";
 import { BsClockFill } from "react-icons/bs";
 import { VscRepoForked } from "react-icons/vsc";
 import { PiUsersThreeBold } from "react-icons/pi";
+import { RxDashboard } from "react-icons/rx";
 import { GrVirtualStorage } from "react-icons/gr";
 import './Sidebar.css'
 function Sidebar() {
@@ -19,6 +20,11 @@ function Sidebar() {
                 <span className='icon close_icon'>x</span>
             </div>
             <ul className='sidebar-list'>
+                <li className='sidebar-list-item'>
+                    <a href="/dashboard" className='no-text-decoration'>
+                        <RxDashboard className='icon' /> Dashboard
+                    </a>
+                </li>
                 <li className='sidebar-list-item'>
                     <a href="/projects" className='no-text-decoration'>
                         <BiSolidShoppingBags className='icon' /> Projects
