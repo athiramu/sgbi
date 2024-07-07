@@ -1,0 +1,30 @@
+.card_backgroun{
+    background-color: #E6ECF0;
+}
+
+.todo{
+    font-size: 22px;
+}
+
+.button-group {
+    display: flex;
+    align-items: center;
+  }
+  .menu{
+    font-size: 10px;
+  }
+
+  .TiAttachment {
+    transform: rotate(135deg); 
+    display: inline-block;
+    vertical-align: middle; 
+    font-size: 20px;
+  }
+
+  .MdOutlinedFlag{
+    color: red;
+  }
+  .card-footer {
+    background-color: transparent; 
+  
+  }

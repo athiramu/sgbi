@@ -7,15 +7,17 @@
   }
 
   .nav_sec_color{
-    background-color: #E5E5E5;
+    background-color: #E6ECF0;
   }
 
   .navbar-brand {
-    margin-right: 1rem; /* Adjust the margin as needed */
+    margin-right: 1rem;
   }
 
   .btn_color{
     background-color: #0013FE;
+    height: 30px;
+  padding: 3px 10px;
   }
 
 
