@@ -4,6 +4,7 @@ import InnerNavbar from './Components/Navbar/InnerNavbar';
 import Taskmanagement from "./Pages/Taskmanagement";
 import Dashboard from "./Pages/Dashboard";
 import NewItem from "./Components/TaskManagement/Task/NewItem";
+import TaskView from "./Components/TaskManagement/TaskView/TaskView";
 function App() {
   return (
     <>
@@ -12,6 +13,8 @@ function App() {
         <Route path="/" element={<Taskmanagement />}/>
         <Route path="/dash" element={<Dashboard />}/>
         <Route path="/creadtenewItem" element={<NewItem />}/>
+        <Route path="/viewtask" element={<TaskView />}/>
+        <Route path="/viewtask/:taskid" element={<TaskView />}/>
        
          
      
