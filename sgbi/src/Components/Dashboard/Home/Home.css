@@ -2,10 +2,10 @@
     grid-area: main;
     overflow-y: auto;
     padding: 20px;
-    margin-top: 60px; /* Height of the header */
-    margin-left: 260px; /* Width of the sidebar */
-    color: rgba(0, 0, 0, 0.95); /* Changed text color to improve readability */
-    background-color: #f4f4f4; /* Optional background color */
+    margin-top: 60px; 
+    margin-left: 260px; 
+    color: rgba(0, 0, 0, 0.95); 
+    background-color: #d4d8f1; 
 }
 
 .main-title {
@@ -25,9 +25,10 @@
     flex-direction: column;
     justify-content: space-around;
     padding: 8px 15px;
-    border-radius: 5px;
-    background-color: #fff; /* Optional background color */
+    border-radius: 3px;
+    background-color: #ebf1f3; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 200px;
 }
 
 .card-inner {
@@ -40,13 +41,46 @@
     font-size: 25px;
 }
 
-.circle-icon {
+.circle-icon1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px; 
-    height: 60px; 
-    background-color: #3498db;
+    width: 50px; 
+    height: 50px; 
+    background-color: #db34d3;
+    color: #fff; 
+    border-radius: 50%; 
+    margin-bottom: 10px;
+}
+.circle-icon2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; 
+    height: 50px; 
+    background-color: #af640d;
+    color: #fff; 
+    border-radius: 50%; 
+    margin-bottom: 10px;
+}
+.circle-icon3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; 
+    height: 50px; 
+    background-color: #2b75c9;
+    color: #fff; 
+    border-radius: 50%; 
+    margin-bottom: 10px;
+}
+.circle-icon4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px; 
+    height: 50px; 
+    background-color: #d36913;
     color: #fff; 
     border-radius: 50%; 
     margin-bottom: 10px;
@@ -55,3 +89,19 @@
 .circle-icon .icon {
     font-size: 30px;
 }
+
+
+.text-content {
+    text-align: center; 
+  }
+  
+  .text-content p,
+  .text-content h2 {
+    margin: 0;
+  }
+
+  .custom-tab-title {
+    color: black !important;
+  }
+  
+

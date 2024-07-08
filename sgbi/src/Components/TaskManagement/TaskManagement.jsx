@@ -11,7 +11,7 @@ function TaskManagement() {
     const navigate = useNavigate();
 
     const handleNewItemClick = () => {
-        navigate('/creadtenewItem');
+        navigate('/viewtask');
       };
     return (
         <>

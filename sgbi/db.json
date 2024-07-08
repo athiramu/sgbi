@@ -1,19 +1,11 @@
 {
-    "tasks": [
-      {
-        "id": 1,
-        "title": "Sample Task 1",
-        "description": "This is a sample task.",
-        "priority":"high",
-        "date":"2/4/2022"
-      },
-      {
-        "id": 2,
-        "title": "Sample Task 2",
-        "description": "This is another sample task.",
-           "priority":"high",
-        "date":"2/4/2022"
-      }
-    ]
-  }
-  
+  "tasks": [
+    {
+      "id": "f8b8",
+      "title": "vxcxc",
+      "description": "xcxcx",
+      "priority": "High",
+      "date": "2024-07-09"
+    }
+  ]
+}

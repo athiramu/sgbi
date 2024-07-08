@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
-import ReactApexChart from 'react-apexcharts'; 
+import ReactApexChart from 'react-apexcharts';
 import './Home.css';
-import { IoPersonSharp } from "react-icons/io5";
+import { BiSolidShoppingBags } from "react-icons/bi";
+import ProjectSummery from './ProjectSummery';
+import { MdOutlineBarChart } from "react-icons/md";
+import { FaRegClock } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
+import { MdArrowOutward } from "react-icons/md";
+import TodayTask from './TodayTask';
+import Projectworkload from './Projectworkload';
+
 
 function Home() {
     const [series, setSeries] = useState([44, 55, 41, 17, 15]);
@@ -23,7 +31,7 @@ function Home() {
             type: 'gradient',
         },
         legend: {
-            formatter: function(val, opts) {
+            formatter: function (val, opts) {
                 return val + " - " + opts.w.globals.series[opts.seriesIndex];
             }
         },
@@ -49,38 +57,80 @@ function Home() {
                 <h3>Overview</h3>
             </div>
             <div className='main-cards'>
-                <div className='card'>
-                    <div className='card-inner'>
-                        <p>Total venue</p>
-                        <h2>$5300000</h2>
+                <div class='card border-0'>
+                    <div class='card-inner'>
+                        <div class='circle-icon1 '>
+                            <MdOutlineBarChart className='icon ' />
+                        </div>
+                        <div class='text-content'>
+                            <p>Total venue</p>
+                            <h2>$5300000</h2>
+                            <small><MdArrowOutward />2% increase from last month</small>
+                        </div>
                     </div>
                 </div>
-                <div className='card'>
-                    <div className='card-inner'>
-                        <p>Projects</p>
-                        <h2>9/100</h2>
+                <div class='card border-0'>
+                    <div class='card-inner'>
+                        <div class='circle-icon2 '>
+                            <BiSolidShoppingBags className='icon ' />
+                        </div>
+                        <div class='text-content'>
+                            <p>Projects</p>
+                            <h2>95/100</h2>
+                            <small><MdArrowOutward />2% increase from last month</small>
+                        </div>
                     </div>
                 </div>
-                <div className='card'>
-                    <div className='card-inner'>
-                        <p>Time spent</p>
-                        <h2>102/1300hrs</h2>
+                <div class='card border-0'>
+                    <div class='card-inner'>
+                        <div class='circle-icon3 '>
+                            <FaRegClock className='icon ' />
+                        </div>
+                        <div class='text-content'>
+                            <p>Time Spent</p>
+                            <h2>102/1500hrs</h2>
+                            <small><MdArrowOutward />2% increase from last month</small>
+                        </div>
                     </div>
                 </div>
-                <div className='card'>
-                    <div className='card-inner'>
-                    <div className='circle-icon '>
-                    <IoPersonSharp className='icon' />
-                </div><br></br>
+                <div class='card border-0'>
+                    <div class='card-inner'>
+                        <div class='circle-icon4 '>
+                            <CgProfile className='icon ' />
+                        </div>
+                        <div class='text-content'>
+                            <p>Resources</p>
+                            <h2>102/150</h2>
+                            <small><MdArrowOutward />2% increase from last month</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <div className='row'><p>Resources</p></div><br></br>
-                
-               <div className='row'><h2>102/1200</h2></div> 
-            </div>
+
+
+            <div className='row'>
+                <div className='col'>
+                    <div id="chart">
+                        <ProjectSummery />
+                    </div>
+                </div>
+                <div className='col card'>
+                    <ReactApexChart options={options} series={series} type="donut" width={380} />
+
                 </div>
             </div>
-            <div id="chart">
-                <ReactApexChart options={options} series={series} type="donut" width={380} />
+
+            <div className='row'>
+                <div className='col'>
+                    <div id="chart">
+                        <TodayTask />
+                    </div>
+                </div>
+                <div className='col '>
+                  <Projectworkload/>
+
+                </div>
             </div>
         </main>
     );
