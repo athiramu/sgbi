@@ -40,6 +40,12 @@
 
   .btn_color_card{
     background-color: #0013FE;
-    height: 25px;
-  padding: 1px 10px;
+    height: 28px;
+  padding: 5px 10px;
+  }
+
+  .btn_color_top{
+    background-color: #e4e5e9;
+    height: 28px;
+  padding: 5px 10px;
   }

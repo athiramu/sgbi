@@ -4,21 +4,36 @@ import { TiAttachment } from "react-icons/ti";
 import { FaFlag } from "react-icons/fa6";
 import { GoClockFill } from "react-icons/go";
 import img from '../../images/images.jfif'
+import { useNavigate } from 'react-router-dom';
 
 
 function TaskManagement() {
+    const navigate = useNavigate();
+
+    const handleNewItemClick = () => {
+        navigate('/creadtenewItem');
+      };
     return (
         <>
             <div className='container '>
+                <div className='row'>
+                
+                <div className='col-6'>
                 <input
                     type="text"
                     placeholder="  Search..."
-                    className='border border-light mt-2 py-1 col-3 my-2'
+                    className='border border-light mt-2 py-1  my-2'
                 // value={searchTerm}
                 // onChange={handleChange}
                 />
+                </div>
+                <div className='col-6 d-flex justify-content-end mt-2'>
+                <button type="button" class="btn btn-primary btn_color_card " onClick={handleNewItemClick}>New Item</button>
+                <button type="button" class="btn btn-light ms-1 btn_color_top">Filter </button>
+                <button type="button" class="btn btn-light ms-1 btn_color_top">Board</button>
+                </div>
 
-
+</div>
                 <div className='row'>
                     <div className='col-3'>
                         <div class="card card_backgroun border-0">
