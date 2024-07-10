@@ -1,55 +1,49 @@
 import React from 'react';
-import CanvasJSReact from '@canvasjs/react-charts';
+import './Home.css';
 
-const CanvasJSChart = CanvasJSReact.CanvasJSChart;
-
-const Projectworkload = () => {
-  const addSymbols = (e) => {
-    const suffixes = ["", "K", "M", "B"];
-    let order = Math.max(Math.floor(Math.log(Math.abs(e.value)) / Math.log(1000)), 0);
-    
-    if (order > suffixes.length - 1) order = suffixes.length - 1;
-
-    const suffix = suffixes[order];
-    return CanvasJSReact.CanvasJS.formatNumber(e.value / Math.pow(1000, order)) + suffix;
-  };
-
-  const options = {
-    animationEnabled: true,
-    theme: "light2", // "light1", "light2", "dark1", "dark2"
-    title: {
-      text: "Top Free Android Apps - June 2018"
-    },
-    axisY: {
-      title: "Number of Downloads",
-      labelFormatter: addSymbols,
-      scaleBreaks: {
-        autoCalculate: true
-      }
-    },
-    axisX: {
-      title: "Apps",
-      labelAngle: 0
-    },
-    data: [{
-      type: "column",
-      dataPoints: [
-        { label: "WhatsApp Messenger", y: 68206498 },
-        { label: "Facebook Messenger", y: 55897709 },
-        { label: "SHAREit", y: 7570438 },
-        { label: "UC Browser", y: 17453224 },
-        { label: "MX Player", y: 6389443 },
-        { label: "Hotstar", y: 4815084 },
-        { label: "Truecaller", y: 7631644 }
-      ]
-    }]
-  };
+function Projectworkload() {
+  const names = ['Sam', 'Meldy', 'Ken', 'Dmitry', 'Vego', 'Kadin', 'Melm'];
+  const circlesData = [3, 4, 1, 6, 4, 1, 2]; // Array defining different numbers of circles for each name
+  const maxCircles = Math.max(...circlesData); // Find the maximum number of circles
 
   return (
-    <div className='mt-3'>
-      <CanvasJSChart options={options} />
+    <div className="card card-projectloadcard col-12 mt-3">
+      <div className='row'>
+      <div className='col'>
+      <h5 className='workload-head'>Project Workload</h5>
+      </div>
+      <div className='col-4'>
+      <select className="form-select  lastmonth-projectload rounded-pill">
+        <option>Last 3 months</option>
+        <option>Last 6 months</option>
+        <option>Last year</option>
+      </select>
+      </div>
+      </div>
+      <div className="row row-project">
+        {names.map((name, index) => {
+          const numberOfCircles = circlesData[index];
+          const isMaxCircles = numberOfCircles === maxCircles;
+
+          return (
+            <div key={index} className="col col-project">
+              <div className="nameContainer">
+                <div className="circlesContainer">
+                  {Array.from({ length: numberOfCircles }).map((_, circleIndex) => (
+                    <div
+                      key={circleIndex}
+                      className={`circle ${circleIndex === numberOfCircles - 1 && isMaxCircles ? 'top red' : (circleIndex === numberOfCircles - 1 ? 'top' : '')}`}
+                    ></div>
+                  ))}
+                </div>
+                <div className="name">{name}</div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
-};
+}
 
 export default Projectworkload;

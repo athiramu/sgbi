@@ -103,5 +103,79 @@
   .custom-tab-title {
     color: black !important;
   }
+  .card-projectloadcard {
+    padding: 20px;
+  }
   
+  .row-project {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .col-project{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+    height: 250px;
+    width: 100px; 
+  }
+  
+  .nameContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .circlesContainer {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    flex-grow: 1;
+  }
+  
+  .circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
 
+   
+    border: 2px solid black; /* Black border */
+  }
+  
+  .circle.top {
+    background-color: #050505; 
+  }
+  
+  .circle.top.red {
+    background-color: red; 
+  }
+  
+  .name {
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .workload-head{
+    font-size: 20px;
+    font-weight: bold;
+  }
+.h5-donut{
+    font-family: sans-serif;
+    color: gray;
+    font-size: 15px;
+}
+h3{
+  
+    font-size: 20px;
+    font-weight: bold;  
+}
+.doughnut{
+    width: 50%;
+  
+}

@@ -9,47 +9,44 @@ import { CgProfile } from "react-icons/cg";
 import { MdArrowOutward } from "react-icons/md";
 import TodayTask from './TodayTask';
 import Projectworkload from './Projectworkload';
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { Doughnut } from 'react-chartjs-2';
 
-
+ChartJS.register(ArcElement, Tooltip, Legend);
 function Home() {
     const [series, setSeries] = useState([44, 55, 41, 17, 15]);
-    const [options, setOptions] = useState({
-        chart: {
-            width: 380,
-            type: 'donut',
-        },
-        plotOptions: {
-            pie: {
-                startAngle: -90,
-                endAngle: 270
-            }
-        },
-        dataLabels: {
-            enabled: false
-        },
-        fill: {
-            type: 'gradient',
-        },
-        legend: {
-            formatter: function (val, opts) {
-                return val + " - " + opts.w.globals.series[opts.seriesIndex];
-            }
-        },
-        title: {
-            text: 'Gradient Donut with custom Start-angle'
-        },
-        responsive: [{
-            breakpoint: 480,
-            options: {
-                chart: {
-                    width: 200
-                },
-                legend: {
-                    position: 'bottom'
-                }
-            }
+    const data = {
+
+        datasets: [{
+            labels: 'poll',
+            data: [3, 3, 3],
+            backgroundColor: ['green', 'yellow', 'red'],
+            borderColor: ['green', 'yellow', 'red'],
+            circumference: 180,
+            rotation: 270,
+            cutout: '90%'
         }]
-    });
+    }
+    const options = {
+
+    }
+    const gaugeText = {
+        id: 'gaugeText',
+        beforeDatasetsDraw(chart, args, pluginOptions) {
+            const {
+                ctx, chartArea: { top, bottom, left, right, width, height }
+            } = chart;
+
+            const xCord = chart.getDatasetMeta(0).data[0].x
+            const yCord = chart.getDatasetMeta(0).data[0].y
+            ctx.save();
+            ctx.fillStyle = 'gray'
+            ctx.font = ' 20px sans-serif'
+            ctx.textAlign = 'center'
+
+            ctx.fillText("72% Completed", xCord, yCord)
+        }
+    }
 
     return (
         <main className='main-container'>
@@ -57,7 +54,7 @@ function Home() {
                 <h3>Overview</h3>
             </div>
             <div className='main-cards'>
-                <div class='card border-0'>
+                <div class='card border-0  col-6'>
                     <div class='card-inner'>
                         <div class='circle-icon1 '>
                             <MdOutlineBarChart className='icon ' />
@@ -115,9 +112,56 @@ function Home() {
                         <ProjectSummery />
                     </div>
                 </div>
-                <div className='col card'>
-                    <ReactApexChart options={options} series={series} type="donut" width={380} />
+                <div className='col-5 card '>
+                    <div className='row'>
+                        <div className='col'>
+                            <h5 className='workload-head'>Overall Progress</h5>
+                        </div>
+                        <div className='col-3'>
+                            <select className="form-select  lastmonth-projectload rounded-pill">
+                                <option>All</option>
+                                <option>Last 6 months</option>
+                                <option>Last year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className='d-flex justify-content-center '>
+                        <div className=' doughnut' >
+                            <Doughnut
+                                data={data}
+                                options={options}
+                                plugins={[gaugeText]}
 
+
+                            >
+
+                            </Doughnut>
+                        </div>
+                    </div>
+                    <div className='row'>
+                        <div className='col'>
+                            <h2>95</h2>
+                            <h5 className='h5-donut'>Total Projects</h5>
+
+                        </div>
+                        <div className='col'>
+                            <h2><span style={{ color: 'green' }}>26</span></h2>
+                            <h5 className='h5-donut'>Completed</h5>
+
+                        </div>
+                        <div className='col'>
+                            <h2><span style={{ color: 'orange' }}>35</span></h2>
+                            <h5 className='h5-donut'>Delayed</h5>
+
+                        </div>
+                        <div className='col'>
+                            <h2><span style={{ color: 'red' }}>35</span></h2>
+                            <h5 className='h5-donut'>Total Projects</h5>
+
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
 
@@ -128,7 +172,7 @@ function Home() {
                     </div>
                 </div>
                 <div className='col '>
-                  <Projectworkload/>
+                    <Projectworkload />
 
                 </div>
             </div>

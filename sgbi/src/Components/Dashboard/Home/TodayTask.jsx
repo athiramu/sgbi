@@ -9,7 +9,8 @@ function TodayTask() {
 
   return (
     <>
-      <div className="card mt-3">
+    <div className='col-12'>
+      <div className="card mt-3 ">
         <div className="card-body">
           <Tabs
             id="controlled-tab-example"
@@ -30,6 +31,7 @@ function TodayTask() {
               <p><input class="form-check-input" type="radio" />Tab content for Important</p>
               <p><input class="form-check-input" type="radio" />Create a user flowof social application design</p>
               <p><input class="form-check-input" type="radio" />Create a user flowof social application design</p>
+           
             </Tab>
             <Tab eventKey="notes" title={<span className="custom-tab-title">Notes</span>}>
             <input class="form-check-input" type="radio" />Tab content for Notes
@@ -41,6 +43,7 @@ function TodayTask() {
             </Tab>
           </Tabs>
         </div>
+      </div>
       </div>
     </>
   );

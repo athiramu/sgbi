@@ -31,7 +31,7 @@ function Sidebar() {
                     </a>
                 </li>
                 <li className='sidebar-list-item'>
-                    <a href="/tasks" className='no-text-decoration'>
+                    <a href="/task" className='no-text-decoration'>
                         <GrTask className='icon' /> Tasks
                     </a>
                 </li>

@@ -11,8 +11,8 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Taskmanagement />}/>
-        <Route path="/dash" element={<Dashboard />}/>
+        <Route path="/task" element={<Taskmanagement />}/>
+        <Route path="/" element={<Dashboard />}/>
         <Route path="/creadtenewItem" element={<NewItem />}/>
         <Route path="/viewtask" element={<TaskView />}/>
         <Route path="/edittask/:taskid" element={<EditTask />}/>
