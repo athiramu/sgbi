@@ -2,7 +2,7 @@
     grid-area: sidebar;
     background-color: #0a0a0a;
     color: #ecf0f1;
-    padding: 20px 0;
+  
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     position: fixed;
@@ -59,4 +59,39 @@
     display: inline !important;
     position: absolute;
     z-index: 12 !important;
+}
+.close_icon{
+    margin-top: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+@media screen and (max-width: 992px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.2fr 3fr;
+        grid-template-areas: 
+            'header'
+            'main';
+    }
+    #sidebar {
+        display: none;
+        width: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .menu-icon {
+        display: inline;
+    }
+    .sidebar-title {
+        display: inline;
+    }
+}
+
+.sidebar-visible {
+    display: block; /* Or whatever style you need to make it visible */
+}
+.main-container.sidebar-visible {
+    margin-left: 250px; /* Adjust based on your sidebar width */
 }

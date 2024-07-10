@@ -3,18 +3,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
+    
     box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
     background-color: #d4d8f1;
     height: 60px;
     position: fixed;
     top: 0;
-    left: 260px; 
-    width: calc(100% - 260px);
+  
+
+    width: 100%;
     z-index: 1000;
 }
 
-.menu-icon, .header-left, .header-right {
+.header-left, .header-right {
     display: flex;
     align-items: center;
 }
@@ -33,4 +34,15 @@
 
 .icon, .icon_header {
     margin-right: 5px;
+}
+
+.BsJustify{
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .BsJustify{
+        display: flex;
+        padding: 3px;
+    }
 }

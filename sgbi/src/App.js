@@ -1,28 +1,39 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from 'react';
 import './App.css';
-import InnerNavbar from './Components/Navbar/InnerNavbar';
-import Taskmanagement from "./Pages/Taskmanagement";
-import Dashboard from "./Pages/Dashboard";
-import NewItem from "./Components/TaskManagement/Task/NewItem";
-import TaskView from "./Components/TaskManagement/TaskView/TaskView";
-import EditTask from "./Components/TaskManagement/EditTask/EditTask";
+import { Route, Routes, Switch } from 'react-router-dom';
+import Header from './Components/Dashboard/Header/Header';
+import Sidebar from './Components/Dashboard/sidebar/Sidebar';
+
+
+
+import Taskmanagement from './Pages/Taskmanagement';
+import NewItem from './Components/TaskManagement/Task/NewItem';
+import TaskView from './Components/TaskManagement/TaskView/TaskView';
+import EditTask from './Components/TaskManagement/EditTask/EditTask';
+import Dashboard from './Pages/Dashboard';
+import Home from './Components/Dashboard/Home/Home';
+import Routetree from './path/routestree';
+
+
+
+
+
+
+
 function App() {
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+
+  const openSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
+
   return (
-    <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/task" element={<Taskmanagement />}/>
-        <Route path="/" element={<Dashboard />}/>
-        <Route path="/creadtenewItem" element={<NewItem />}/>
-        <Route path="/viewtask" element={<TaskView />}/>
-        <Route path="/edittask/:taskid" element={<EditTask />}/>
-       
-         
-     
-      </Routes>
-    </BrowserRouter>
-    </>
-  
+    <div className="App">
+      <Header openSidebar={openSidebar} />
+      <Sidebar openSidebarToggle={openSidebarToggle} openSidebar={openSidebar} />
+     <Home/>
+     <Routetree />
+    </div>
   );
 }
 

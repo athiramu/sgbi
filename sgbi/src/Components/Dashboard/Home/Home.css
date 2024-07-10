@@ -120,7 +120,7 @@
     justify-content: flex-end;
     padding: 10px;
     height: 250px;
-    width: 100px; 
+    
   }
   
   .nameContainer {
@@ -178,4 +178,13 @@ h3{
 .doughnut{
     width: 50%;
   
+}
+
+
+@media screen and (max-width: 992px) {
+    .main-container {
+         
+        margin-left: 0; 
+        
+    }
 }
